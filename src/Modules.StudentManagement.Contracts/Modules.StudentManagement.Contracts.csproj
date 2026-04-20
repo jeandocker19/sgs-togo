@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<RootNamespace>FSH.Modules.StudentManagement.Contracts</RootNamespace>
+		<AssemblyName>FSH.Modules.StudentManagement.Contracts</AssemblyName>
+		<PackageId>FullStackHero.Modules.StudentManagement.Contracts</PackageId>
+	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ObjectModel" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingBlocks\Shared\Shared.csproj" />
+  </ItemGroup>
+
+</Project>
+
+
+

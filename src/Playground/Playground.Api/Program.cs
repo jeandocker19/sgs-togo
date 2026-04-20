@@ -8,6 +8,7 @@ using FSH.Modules.Multitenancy;
 using FSH.Modules.Multitenancy.Contracts.v1.GetTenantStatus;
 using FSH.Modules.Multitenancy.Features.v1.GetTenantStatus;
 using FSH.Modules.SchoolManagement;
+using FSH.Modules.StudentManagement;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,7 +40,11 @@ builder.Services.AddMediator(o =>
         typeof(FSH.Modules.Auditing.Contracts.AuditEnvelope),
         typeof(FSH.Modules.Auditing.Persistence.AuditDbContext),
         typeof(FSH.Modules.SchoolManagement.Contracts.SchoolManagementContractsMarker),
-        typeof(FSH.Modules.SchoolManagement.SchoolManagementModule)];
+        typeof(FSH.Modules.SchoolManagement.SchoolManagementModule),
+        typeof(FSH.Modules.StudentManagement.Contracts.StudentManagementContractsMarker),
+        typeof(FSH.Modules.StudentManagement.StudentManagementModule),
+
+        ];
 });
 
 var moduleAssemblies = new Assembly[]
@@ -47,7 +52,8 @@ var moduleAssemblies = new Assembly[]
     typeof(IdentityModule).Assembly,
     typeof(MultitenancyModule).Assembly,
     typeof(AuditingModule).Assembly,
-    typeof(SchoolManagementModule).Assembly
+    typeof(SchoolManagementModule).Assembly,
+    typeof(StudentManagementModule).Assembly
 };
 
 builder.AddHeroPlatform(o =>
